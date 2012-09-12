@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.css" />
+    <link rel="stylesheet" href="css/questionnaire.css" />
+
+    <script type="text/javascript" src="js/libs/cordova-2.0.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.js"></script>
+    <script type="text/javascript" src="js/app/main.js"></script>
+    <script type="text/javascript" src="js/app/questionnaire.js"></script>
+
+
+    <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rosario' rel='stylesheet' type='text/css'>
+
+    <script src="js/libs/jquery.easing.1.3.js"></script>
+    <script src="js/libs/supersized.core.3.2.1.js"></script>
+    <script src="js/libs/jquery.jsonp-2.4.0.min.js"></script>
+    <script src="js/app/slide.js"></script>
+
+    <script type="text/javascript">
+        $( document ).bind( "mobileinit", function() {
+            // Make your jQuery Mobile framework configuration changes here!
+            $.mobile.allowCrossDomainPages = true;
+        });
+    </script>
+</head>
+<body>
+    <div data-role="page" id="admin_main">
+
+        <div data-role="header" data-theme="b">
+            <h1>The title</h1>
+        </div><!-- /header -->
+
+        <div data-role="content">
+            <form id="login_form" action="" method="POST">
+                <input type="text" id="login_name" name="login_name" maxlength="60" placeholder="Enter your login" />
+                <input type="password" id="login_password" name="login_password" maxlength="60" placeholder="Enter your password" />
+                <input type="button" id="login_btn" onclick="Questionnaire.admin_login()" value="Login" />
+            </form>
+            <div id="admin_content" class="admin-content">
+                <form id="admin-filters" name="admin_filters" method="POST" action="">
+                    <div class="form-item">
+                        <label>Select year of graduation</label>
+                        <select id="filter_year" name="year">
+                            <option value="0" selected>All</option>
+                        </select>
+                    </div>
+                    <div class="form-item">
+                        <label>Select working experience</label>
+                        <select id="filter_working_experience" name="working_experience">
+                            <option value="0" selected>All</option>
+                            <option value="1">Yes</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+                    <div class="form-item">
+                        <label>Select english level</label>
+                        <select id="filter_english_level" name="english_level">
+                            <option value="0" selected>All</option>
+                            <option value="1">Beginner</option>
+                            <option value="2">Intermediate</option>
+                            <option value="3">Advanced</option>
+                        </select>
+                    </div>
+                    <div class="form-item">
+                        <label>Select ready participate</label>
+                        <select id="filter_ready_participate" name="ready_participate">
+                            <option value="0" selected>All</option>
+                            <option value="1">Yes</option>
+                            <option value="2">Not now</option>
+                            <option value="3">No</option>
+                        </select>
+                    </div>
+                    <input id="Export" type="button" onclick="Questionnaire.admin_export()" value="Export" />
+                </form>
+            </div>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-theme="a">
+            <h4>The Footer</h4>
+        </div><!-- /footer -->
+
+        <div data-rel="dialog" id="message" class="message"></div>
+    </div><!-- /page -->
+</body>
+</html>

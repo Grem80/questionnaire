@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.css" />
+        <link rel="stylesheet" href="css/questionnaire.css" />
+
+        <script type="text/javascript" src="js/libs/cordova-2.0.0.js"></script>
+        <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.2.0-alpha.1/jquery.mobile-1.2.0-alpha.1.min.js"></script>
+        <script type="text/javascript" src="js/app/main.js"></script>
+        <script type="text/javascript" src="js/app/questionnaire.js"></script>
+
+
+        <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Rosario' rel='stylesheet' type='text/css'>
+
+        <script src="js/libs/jquery.easing.1.3.js"></script>
+        <script src="js/libs/supersized.core.3.2.1.js"></script>
+        <script src="js/libs/jquery.jsonp-2.4.0.min.js"></script>
+        <script src="js/app/slide.js"></script>
+
+        <script type="text/javascript">
+            $( document ).bind( "mobileinit", function() {
+                // Make your jQuery Mobile framework configuration changes here!
+
+                $.mobile.allowCrossDomainPages = true;
+            });
+
+        </script>
+
+
+    </head>
+    <body id="main_body">
+
+
+
+        <div data-role="page" id="main">
+
+            <div data-role="header" data-theme="b">
+                <h1>Questionnaire</h1>
+            </div><!-- /header -->
+
+            <div data-role="content">
+
+
+                <div data-role="content" data-theme="c">
+
+                    <!--Name-->
+                    <div data-role="fieldcontain">
+                        <label for="firstname">First name:</label>
+                        <input type="text" name="firstname" id="firstname" value="" placeholder="Enter your first name"/>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="lastname">Last name:</label>
+                        <input type="text" name="lastname" id="lastname" value="" placeholder="Enter your last name"/>
+                    </div>
+
+                    <!--Switch-->
+                    <div data-role="fieldcontain">
+                        <label for="education_inform">Education informations:</label>
+                        <select name="education_inform" id="education_inform" data-role="slider" data-mini="true">
+                            <option value="off">Off</option>
+                            <option value="on">On</option>
+                        </select>
+                    </div>
+
+                    <!--University-->
+                    <div class="education_block" style="display: none;">
+                        <div data-role="fieldcontain" style="border: 1px solid #cccccc; padding: .4em;">
+
+                            <fieldset data-role="controlgroup" >
+                                <legend>University</legend>
+
+                                <div data-role="fieldcontain">
+                                    <select id="city" name="city" data-native-menu="false" data-mini="true" data-overlay-theme="e" data-theme="c">
+                                        <option class="plch" data-placeholder="true">Select city:</option>
+                                        <option value="1">Вінниця</option>
+                                        <option value="2">Дніпропетровськ</option>
+                                        <option value="3">Донецьк</option>
+                                        <option value="4">Житомир</option>
+                                        <option value="5">Запоріжжя</option>
+                                        <option value="6">Івано-Франківськ</option>
+                                        <option value="7">Київ</option>
+                                        <option value="8">Кіровоград</option>
+                                        <option value="9">Крим</option>
+                                        <option value="10">Луганськ</option>
+                                        <option value="11">Луцьк</option>
+                                        <option value="12">Львів</option>
+                                        <option value="13">Миколаїв</option>
+                                        <option value="14">Одеса</option>
+                                        <option value="15">Полтава</option>
+                                        <option value="16">Рівне</option>
+                                        <option value="17">Суми</option>
+                                        <option value="18">Тернопіль</option>
+                                        <option value="19">Ужгород</option>
+                                        <option value="20">Харків</option>
+                                        <option value="21">Херсон</option>
+                                        <option value="22">Хмельницький</option>
+                                        <option value="23">Черкаси</option>
+                                        <option value="24">Чернівці</option>
+                                        <option value="25">Чернігів</option>
+                                    </select>
+
+
+                                    <select id="university" name="name" data-native-menu="false" data-mini="true" data-overlay-theme="e" data-theme="c">
+                                        <option class="plch" data-placeholder="true">Select university:</option>
+                                    </select>
+
+                                    <select id="faculty" name="faculty" data-native-menu="false" data-mini="true" data-overlay-theme="e" data-theme="c">
+                                        <option class="plch" data-placeholder="true">Faculty:</option>
+                                    </select>
+
+                                    <select id="year" name="year" data-native-menu="false" data-mini="true" data-overlay-theme="e" data-theme="c">
+                                        <option class="plch" data-placeholder="true">Year of graduation</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <!--Email-->
+                    <div data-role="fieldcontain">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" value="" placeholder="user@mail.com"/>
+                    </div>
+
+                    <!--Phone-->
+                    <div data-role="fieldcontain">
+                        <label for="phone">Mobile phone:</label>
+                        <input type="text" name="phone" id="phone" value="" placeholder="example +38(097)555-55-55" />
+                    </div>
+
+                    <!--working experience-->
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <legend>Have you any working experience?</legend>
+
+                            <input type="radio" name="experience" id="experience_yes" value="1" />
+                            <label for="experience_yes">Yes</label>
+
+                            <input type="radio" name="experience" id="experience_no" value="2" checked="checked" />
+                            <label for="experience_no">No</label>
+                        </fieldset>
+                    </div>
+
+                    <!--English level-->      
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <legend>English level:</legend>
+
+                            <input type="radio" name="english" id="english_1" value="1" checked="checked" />
+                            <label for="english_1">Beginner</label>
+
+                            <input type="radio" name="english" id="english_2" value="2"  />
+                            <label for="english_2">Intermediate</label>
+
+                            <input type="radio" name="english" id="english_3" value="3"  />
+                            <label for="english_3">Advanced</label>
+                        </fieldset>
+                    </div>
+
+                    <!--Training_ready-->       
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup" data-type="horizontal">
+                            <legend>Are you ready to participate in frog Training Program:</legend>
+
+                            <input type="radio" name="training_ready" id="training_ready_1" value="1" checked="checked" />
+                            <label for="training_ready_1">Yes</label>
+
+                            <input type="radio" name="training_ready" id="training_ready_2" value="2"  />
+                            <label for="training_ready_2">Not now</label>
+
+                            <input type="radio" name="training_ready" id="training_ready_3" value="3"  />
+                            <label for="training_ready_3">No</label>
+                        </fieldset>
+                    </div>
+
+                </div>
+
+                <!--Button Save-->
+                <div data-role="fieldcontain">
+                    <a id="save_button" onclick="Questionnaire.save_data()" class="save_button ui-btn ui-btn-inline ui-shadow ui-btn-corner-all ui-btn-up-c" data-inline="true" data-transition="slide" data-role="button"  data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="e">
+                        <span class="ui-btn-inner ui-btn-corner-all">Save</span>
+                    </a>
+                </div>
+                
+                <div id="message" class="message error_msg"></div>
+            </div><!-- /content -->
+
+            <div data-role="footer" data-theme="a">
+                <h4>The Footer</h4>
+            </div><!-- /footer -->      
+        </div><!-- /page -->
+
+        <!-------------------------------------------->
+        <div data-role="page" data-rel="dialog" id="save">
+            <div data-role="header">
+                <h1>The title2</h1>
+            </div><!-- /header -->
+
+            <div id="save_content" data-role="content">
+                <div id="save_container"></div>
+                <div data-role="fieldcontain">
+                    <a id="send" class="send_button ui-btn ui-btn-inline ui-shadow ui-btn-corner-all ui-btn-up-c" data-inline="true" data-transition="slide" data-role="button"  data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="e">
+                        <span class="ui-btn-inner ui-btn-corner-all">Send</span>
+                    </a>
+                </div>
+
+                <div data-role="fieldcontain">
+                    <a id="edit" class="edit_button ui-btn ui-btn-inline ui-shadow ui-btn-corner-all ui-btn-up-c" data-inline="true" data-transition="slide" data-role="button" href="#main" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="e">
+                        <span class="ui-btn-inner ui-btn-corner-all">Edit</span>
+                    </a>
+                </div>
+            </div><!-- /content -->
+
+            <div data-role="footer">
+                <h4>The Footer2</h4>
+            </div><!-- /footer -->      
+        </div><!-- /page -->
+
+
+    </body>
+</html>

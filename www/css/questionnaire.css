@@ -1,0 +1,58 @@
+.message{
+    background:#4B4B4B url('images/success.png') no-repeat 2% center;
+    border-bottom: 2px solid #A1A1A1;
+    border-left: 2px solid #A1A1A1;
+    border-right: 2px solid #A1A1A1;
+    top: 0;
+    color: #E9E9E9;
+    left: 5%;
+    padding:20px 0;
+    position: fixed;
+    text-align: center;
+    width: 90%;
+    z-index: 100;
+    display: none;
+    opacity: 0.9;
+    cursor: pointer;
+    font-size: 20px;
+    text-shadow: none !important;
+    
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px; 
+
+    -webkit-box-shadow: 0px 0px 8px 0px #000000;
+    box-shadow: 0px 0px 8px 0px #000000; 
+}
+.message.error{
+    background:#4B4B4B url('images/error.png') no-repeat 2% center;}
+.error_msg p{
+    margin:0;
+    padding:0;
+}
+.save_button, .send_button, .edit_button{
+    width: 100%;
+}
+.save_item{
+    
+}
+.save_item span{
+    font-weight: bolder;
+}
+.education_save{
+    background: #E8E7E7;
+    border: 1px dashed #CCCCCC;
+    padding: 0 3%;
+}
+.education_save_head{
+    text-decoration: underline;
+    font-weight: bolder;
+    color: #494949;
+}
+.error_fields{
+    color: #FFE25E;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+.error_fields:hover{
+    color: #cccccc;
+}
